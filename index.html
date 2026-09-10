@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>书呆子很苦恼 - 校园轻小说在线阅读与角色设定解析</title>
+<meta name="description" content="书呆子很苦恼是一部校园题材轻小说，讲述成绩优秀却不擅社交的主角在高中生活中遇到的烦恼与成长。本站提供作品简介、角色设定、分卷目录、阅读指南与常见问题解答。">
+<meta name="keywords" content="书呆子很苦恼,校园轻小说,书呆子很苦恼小说,书呆子很苦恼在线阅读,校园青春小说,角色设定">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #1f2937;
+  --ink-soft: #4b5563;
+  --paper: #faf9f6;
+  --paper-card: #ffffff;
+  --line: #e5e2da;
+  --accent: #3f6f5b;
+  --accent-soft: #eaf2ed;
+  --warm: #c98a4b;
+  --warm-soft: #fbf2e6;
+  --shadow: 0 6px 22px rgba(31, 41, 55, 0.07);
+}
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- 页眉 ---------- */
+.site-header {
+  background: rgba(250, 249, 246, 0.94);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(140deg, var(--accent), #6f9d86);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.brand small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 1px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  transition: background 0.2s, color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- 首屏 ---------- */
+.hero {
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(63, 111, 91, 0.09), transparent 46%),
+    radial-gradient(circle at 6% 88%, rgba(201, 138, 75, 0.09), transparent 42%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--warm-soft);
+  color: var(--warm);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.35;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-lead {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  max-width: 40em;
+  margin-bottom: 26px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(63, 111, 91, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(63, 111, 91, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  background: #fff;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* 首屏信息卡 */
+.hero-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 26px 26px 22px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.fact-list {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.fact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1efe9;
+  color: var(--ink-soft);
+}
+
+.fact-list li:last-child {
+  border-bottom: none;
+}
+
+.fact-list b {
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ---------- 通用区块 ---------- */
+.section {
+  padding: 54px 0;
+}
+
+.section-alt {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  margin-bottom: 30px;
+}
+
+.section-head .kicker {
+  font-size: 0.76rem;
+  letter-spacing: 2px;
+  color: var(--warm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-head h2 {
+  font-size: 1.5rem;
+  margin: 8px 0 10px;
+  letter-spacing: 0.5px;
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 46em;
+}
+
+/* ---------- 简介 ---------- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.intro-text p {
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.pull-quote {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 22px;
+  font-size: 0.95rem;
+  color: #2f5a48;
+}
+
+.pull-quote strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* ---------- 角色卡片 ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.char-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px 22px;
+  transition: transform 0.18s, box-shadow 0.22s, border-color 0.22s;
+}
+
+.char-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: #cfdcd4;
+}
+
+.char-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.char-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.char-role {
+  font-size: 0.78rem;
+  color: var(--warm);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.char-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 分卷目录 ---------- */
+.volume-list {
+  display: grid;
+  gap: 14px;
+}
+
+.volume-item {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.volume-item:hover {
+  border-color: #cfdcd4;
+  background: #fdfefd;
+}
+
+.volume-no {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 5px 11px;
+  margin-top: 3px;
+}
+
+.volume-body h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+
+.volume-body p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 阅读指南 ---------- */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.guide-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 24px;
+}
+
+.guide-card .num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--warm);
+  letter-spacing: 2px;
+}
+
+.guide-card h3 {
+  font-size: 1.05rem;
+  margin: 10px 0 10px;
+}
+
+.guide-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 主题标签 ---------- */
+.theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.theme-tags span {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- FAQ ---------- */
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 18px 24px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 400;
+  flex: 0 0 auto;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-body {
+  padding: 16px 24px 20px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 侧栏 / 相关 ---------- */
+.related-band {
+  background: linear-gradient(160deg, #2f5a48, #3f6f5b);
+  color: #eef5f1;
+  border-radius: 20px;
+  padding: 40px 38px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.related-band h2 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.related-band p {
+  font-size: 0.93rem;
+  color: #d6e5dc;
+}
+
+.related-links {
+  display: grid;
+  gap: 10px;
+}
+
+.related-links a {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.related-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  background: #1f2937;
+  color: #9ca3af;
+  padding: 44px 0 30px;
+  font-size: 0.88rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.footer-grid h3 {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.footer-grid p {
+  line-height: 1.9;
+}
+
+.footer-grid ul {
+  list-style: none;
+}
+
+.footer-grid li {
+  margin-bottom: 9px;
+}
+
+.footer-grid a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 900px) {
+  .hero-grid,
+  .intro-grid,
+  .related-band {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+  .header-inner {
+    height: auto;
+    padding: 12px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .main-nav {
+    width: 100%;
+  }
+  .main-nav a {
+    padding: 6px 11px;
+    font-size: 0.85rem;
+  }
+  .hero {
+    padding: 36px 0 34px;
+  }
+  .section {
+    padding: 40px 0;
+  }
+  .volume-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .related-band {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-mark">书</span>
+      <span>
+        书呆子很苦恼
+        <small>校园轻小说 · 阅读资料站</small>
+      </span>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#intro" class="active">作品简介</a>
+      <a href="#characters">角色设定</a>
+      <a href="#volumes">分卷目录</a>
+      <a href="#guide">阅读指南</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">校园 · 青春 · 成长</span>
+        <h1>书呆子很苦恼：<em>当成绩单之外的世界</em>同样需要答案</h1>
+        <p class="hero-lead">
+          《书呆子很苦恼》是一部以高中校园为背景的青春轻小说，主角成绩优异却不擅长与人相处，
+          在社团、班级和日常交往中不断遇到新的困扰。作品用一个又一个看似琐碎的校园片段，
+          呈现“只会读书”的少年如何重新认识自己，也重新认识身边的人。
+        </p>
+        <div class="hero-actions">
+          <a href="#intro" class="btn btn-primary">了解作品设定</a>
+          <a href="#guide" class="btn btn-ghost">阅读顺序建议</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="作品基本信息">
+        <h2>作品速览</h2>
+        <ul class="fact-list">
+          <li><span>作品类型</span><b>校园青春轻小说</b></li>
+          <li><span>故事背景</span><b>高中校园日常</b></li>
+          <li><span>核心主题</span><b>成长 · 社交 · 自我认同</b></li>
+          <li><span>叙事视角</span><b>主角第一人称</b></li>
+          <li><span>阅读节奏</span><b>短章为主，适合碎片阅读</b></li>
+          <li><span>适合人群</span><b>校园题材与轻小说读者</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 作品简介 -->
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">About</span>
+        <h2>作品简介：苦恼从哪里来</h2>
+        <p>理解标题中的“苦恼”，是进入这部作品的第一把钥匙。</p>
+      </div>
+
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p>
+            “书呆子”在中文语境里通常指把大量时间投入学习、对课本之外的事情反应偏慢的人。
+            这个称呼本身带着一点调侃，也带着一点标签化的意味。《书呆子很苦恼》正是围绕这种标签展开：
+            主角在学习上并不吃力，真正让他苦恼的是那些没有标准答案的问题——
+            怎样在小组讨论里说出自己的想法，怎样回应同学的玩笑，怎样面对一次并不理想的社交尝试。
+          </p>
+          <p>
+            作品的叙事重心并不在戏剧化的冲突，而在日常细节。一次值日、一场运动会、一次被临时点名的发言，
+            都可能成为主角内心波动的来源。作者用相对克制的笔触描写这些瞬间，
+            让“苦恼”不再是夸张的情绪，而是一种可以被读者辨认的、真实的青春期体验。
+          </p>
+          <p>
+            从阅读体验上看，这类校园轻小说的价值在于共情。读者未必和主角一样成绩拔尖，
+            但大多经历过“在某个场合不知道该怎么办”的时刻。作品提供的不是万能解法，
+            而是一种观察自己的角度：原来这种局促并不奇怪，也不是只有自己会遇到。
+          </p>
+          <p>
+            需要说明的是，不同版本和不同平台的整理方式可能影响章节顺序与译名，
+            阅读时以实际来源的目录为准，本文提供的结构说明用于帮助读者建立整体印象。
+          </p>
+        </div>
+
+        <div class="pull-quote">
+          <strong>阅读提示</strong>
+          如果是为了理解人物关系而阅读，建议按章节顺序推进；
+          如果只是想感受氛围，可以从任意一卷的日常片段开始，不影响对主线情绪的理解。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 角色设定 -->
+  <section class="section section-alt" id="characters">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Characters</span>
+        <h2>角色设定与人物关系</h2>
+        <p>校园题材的看点往往不在设定复杂度，而在人物之间的相互影响。</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="char-card">
+          <div class="char-avatar">主</div>
+          <h3>主角</h3>
+          <p class="char-role">成绩优秀 · 社交生涩</p>
+          <p>
+            习惯用逻辑解决问题，面对人际场景时容易过度分析。
+            他的苦恼大多来自“知道正确答案却说不出口”的落差，
+            成长线也围绕如何接受自己的不擅长而展开。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <div class="char-avatar">同</div>
+          <h3>同桌</h3>
+          <p class="char-role">直率 · 行动派</p>
+          <p>
+            说话直接、不太顾虑气氛，却常常无意间替主角打破僵局。
+            两人之间的互动是作品中最主要的日常推进力，
+            也是主角观察“另一种活法”的窗口。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <div class="char-avatar">班</div>
+          <h3>班长</h3>
+          <p class="char-role">负责 · 边界感强</p>
+          <p>
+            习惯照顾集体，也因此容易忽略自己的需求。
+            她与主角在“如何平衡他人期待与自我意愿”这一点上形成呼应，
+            让作品的主题不只停留在主角一人身上。
+          </p>
+        </article>
+
+        <article class="char-card">
+          <div class="char-avatar">社</div>
+          <h3>社团前辈</h3>
+          <p class="char-role">松弛 · 经验者</p>
+          <p>
+            不急于给出建议，更多是提供一个允许犯错的空间。
+            这类角色的存在，让主角的成长显得自然，
+            而不是靠某个瞬间突然“开窍”。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分卷目录 -->
+  <section class="section" id="volumes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Volumes</span>
+        <h2>分卷结构与内容走向</h2>
+        <p>以下为按主题划分的内容脉络说明，用于帮助读者把握整体节奏。</p>
+      </div>
+
+      <div class="volume-list">
+        <article class="volume-item">
+          <span class="volume-no">第一卷</span>
+          <div class="volume-body">
+            <h3>入学与错位</h3>
+            <p>
+              交代主角的学习习惯与社交处境，通过开学初期的班级活动建立基本人物关系。
+              这一阶段的苦恼以“不适应”为主，情绪基调相对轻快。
+            </p>
+          </div>
+        </article>
+
+        <article class="volume-item">
+          <span class="volume-no">第二卷</span>
+          <div class="volume-body">
+            <h3>社团与协作</h3>
+            <p>
+              主角被迫参与集体任务，在分工、沟通和失误中逐渐调整自己的处理方式。
+              作品开始讨论“个人能力”与“团队配合”之间的差异。
+            </p>
+          </div>
+        </article>
+
+        <article class="volume-item">
+          <span class="volume-no">第三卷</span>
+          <div class="volume-body">
+            <h3>误解与澄清</h3>
+            <p>
+              人物之间出现意见分歧，主角第一次意识到，沉默有时也会被理解成别的意思。
+              这一卷的情绪浓度较高，是主题深化的关键段落。
+            </p>
+          </div>
+        </article>
+
+        <article class="volume-item">
+          <span class="volume-no">第四卷</span>
+          <div class="volume-body">
+            <h3>日常与沉淀</h3>
+            <p>
+              回到相对平缓的校园节奏，用若干短篇呈现主角的变化。
+              苦恼并未消失，但他已经学会与它相处，这也是作品想传达的落点之一。
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读指南 -->
+  <section class="section section-alt" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Guide</span>
+        <h2>阅读指南与选择建议</h2>
+        <p>针对不同阅读目的，给出几条相对稳妥的建议。</p>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <span class="num">01</span>
+          <h3>按顺序阅读，理解更完整</h3>
+          <p>
+            校园日常类作品的魅力在于细节积累，人物关系的变化依赖前后照应。
+            如果时间允许，从第一卷开始顺序阅读，能更清楚地看到主角心态的转变过程。
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <span class="num">02</span>
+          <h3>关注对话，而非情节</h3>
+          <p>
+            这类作品的推进力大多来自对话中的语气和停顿。
+            留意主角“想说什么”和“实际说了什么”之间的差距，往往比追剧情更有收获。
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <span class="num">03</span>
+          <h3>控制单次阅读量</h3>
+          <p>
+            章节较短、情绪密度不低，连续阅读容易产生疲劳。
+            每次读一到两章，留一点时间消化，反而更能体会文字里的分寸感。
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <span class="num">04</span>
+          <h3>注意版本与译名差异</h3>
+          <p>
+            不同来源在章节编号、角色译名上可能存在差别。
+            如果发现前后称呼不一致，先确认是否属于同一版本，避免误读人物关系。
+          </p>
+        </article>
+      </div>
+
+      <div style="margin-top:34px;">
+        <h3 style="font-size:1.05rem;margin-bottom:14px;">常见主题标签</h3>
+        <div class="theme-tags">
+          <span>校园日常</span>
+          <span>青春成长</span>
+          <span>社交焦虑</span>
+          <span>自我认同</span>
+          <span>群像描写</span>
+          <span>轻喜剧基调</span>
+          <span>短章叙事</span>
+          <span>治愈向</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>常见问题解答</h2>
+        <p>整理读者在了解这部作品时最常提出的几个问题。</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>《书呆子很苦恼》主要讲的是什么？</summary>
+          <div class="faq-body">
+            作品以高中校园为舞台，讲述一名成绩优秀但不擅长社交的学生，
+            在班级、社团和日常交往中不断遇到困扰并逐渐调整心态的过程。
+            重点不在成绩竞争，而在人与人之间的理解。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>没有读过轻小说，可以直接看这部吗？</summary>
+          <div class="faq-body">
+            可以。校园日常题材的门槛较低，不依赖复杂设定或前置知识。
+            只要对校园生活场景有基本印象，就能顺畅进入故事。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>作品的情绪基调会不会很沉重？</summary>
+          <div class="faq-body">
+            整体偏轻，苦恼的描写带有自嘲和幽默成分。
+            个别段落会触及误解与失落，但处理方式相对温和，不属于压抑型作品。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>适合什么年龄段的读者？</summary>
+          <div class="faq-body">
+            主要面向青少年及对校园题材感兴趣的成年读者。
+            内容以日常和成长为主，不涉及需要特别提示的敏感描写。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>本站提供的是全文还是资料整理？</summary>
+          <div class="faq-body">
+            本站整理的是作品简介、角色设定、结构脉络与阅读建议，
+            属于资料型页面，用于帮助读者在阅读前建立整体认识。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="related-band">
+        <div>
+          <h2>继续了解同类校园题材</h2>
+          <p>
+            如果你喜欢这种以日常细节推动人物变化的叙事方式，
+            可以顺着以下方向继续浏览，找到口味相近的作品与阅读资料。
+          </p>
+        </div>
+        <div class="related-links">
+          <a href="#intro">校园青春题材的常见结构</a>
+          <a href="#characters">如何快速梳理人物关系</a>
+          <a href="#guide">轻小说的阅读节奏建议</a>
+          <a href="#faq">阅读前需要了解的事项</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>书呆子很苦恼 · 阅读资料站</h3>
+        <p>
+          本站围绕《书呆子很苦恼》整理作品简介、角色设定、分卷脉络与阅读建议，
+          内容以帮助读者理解作品为主，不提供未经授权的正文内容。
+        </p>
+      </div>
+      <div>
+        <h3>页面导航</h3>
+        <ul>
+          <li><a href="#intro">作品简介</a></li>
+          <li><a href="#characters">角色设定</a></li>
+          <li><a href="#volumes">分卷目录</a></li>
+          <li><a href="#guide">阅读指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>阅读提醒</h3>
+        <ul>
+          <li>章节顺序以实际来源为准</li>
+          <li>不同版本译名可能存在差异</li>
+          <li>建议合理安排阅读时间</li>
+          <li>支持正版阅读渠道</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 书呆子很苦恼 阅读资料站 · 内容整理仅供阅读参考
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 导航高亮：根据滚动位置切换当前栏目
+  (function () {
+    var links = document.querySelectorAll('.main-nav a');
+    var sections = [];
+    links.forEach(function (link) {
+      var id = link.getAttribute('href').replace('#', '');
+      var el = document.getElementById(id);
+      if (el) sections.push({ link: link, el: el });
+    });
+
+    function update() {
+      var pos = window.scrollY + 120;
+      var current = sections.length ? sections[0] : null;
+      sections.forEach(function (item) {
+        if (item.el.offsetTop <= pos) current = item;
+      });
+      links.forEach(function (l) { l.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+</body>
+  </html>
