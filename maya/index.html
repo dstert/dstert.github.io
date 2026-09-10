@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玛雅体-网络流行文体起源、写法与使用场景解析</title>
+<meta name="description" content="玛雅体是起源于中文互联网的调侃式文体，以“2012世界末日”和玛雅预言为背景，用夸张许愿的方式表达对未来的期待。本文介绍玛雅体的起源、句式结构、写法示例、常见变体和使用场景。">
+<meta name="keywords" content="玛雅体,玛雅体是什么,玛雅体写法,玛雅体例句,网络流行文体">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#0f1419;
+    --bg-soft:#161d26;
+    --card:#1c2530;
+    --line:#2a3644;
+    --ink:#e8edf2;
+    --ink-soft:#9fb0c0;
+    --accent:#d9a441;
+    --accent-2:#c97b3c;
+    --jade:#4fa88b;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* ---------- header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,20,25,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;height:64px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:.5px;}
+  .brand-mark{
+    width:30px;height:30px;border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:grid;place-items:center;color:#1a1206;font-size:15px;font-weight:800;
+  }
+  .brand small{display:block;font-size:11px;font-weight:400;color:var(--ink-soft);letter-spacing:1px;}
+  .main-nav{display:flex;gap:6px;flex-wrap:wrap;}
+  .main-nav a{
+    padding:7px 13px;border-radius:8px;font-size:14.5px;color:var(--ink-soft);
+    transition:.2s;
+  }
+  .main-nav a:hover,.main-nav a.active{color:var(--ink);background:var(--card);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(700px 320px at 82% -10%,rgba(217,164,65,.20),transparent 65%),
+      radial-gradient(600px 300px at 5% 110%,rgba(79,168,139,.16),transparent 60%),
+      var(--bg-soft);
+    border-bottom:1px solid var(--line);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:44px 44px;pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;
+    padding:64px 0 58px;
+  }
+  .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .tag{
+    font-size:12.5px;padding:4px 11px;border-radius:999px;
+    border:1px solid var(--line);color:var(--ink-soft);background:rgba(255,255,255,.02);
+  }
+  .hero h1{
+    font-size:clamp(28px,4.4vw,44px);
+    line-height:1.28;margin:0 0 18px;letter-spacing:.5px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(120deg,var(--accent),#f0cf8a);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    color:var(--ink-soft);font-size:16.5px;margin:0 0 26px;max-width:56ch;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:11px 22px;border-radius:10px;
+    font-size:15px;font-weight:600;transition:.22s;border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1c1305;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(217,164,65,.7);}
+  .btn-ghost{border-color:var(--line);color:var(--ink-soft);}
+  .btn-ghost:hover{color:var(--ink);border-color:var(--accent);}
+
+  .hero-side{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 18px;align-self:start;
+  }
+  .hero-side h2{font-size:15px;margin:0 0 14px;color:var(--accent);letter-spacing:1px;font-weight:600;}
+  .hero-side ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--ink-soft);}
+  .hero-side li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;gap:10px;}
+  .hero-side li:last-child{border-bottom:none;}
+  .hero-side li span{color:var(--accent);font-weight:700;flex:0 0 auto;}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0;}
+  .sec-head{margin-bottom:30px;}
+  .sec-head .kicker{
+    font-size:13px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;
+    display:block;margin-bottom:8px;
+  }
+  .sec-head h2{font-size:clamp(21px,2.6vw,28px);margin:0 0 10px;}
+  .sec-head p{color:var(--ink-soft);margin:0;max-width:70ch;font-size:15.5px;}
+
+  /* ---------- structure cards ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;transition:.25s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(217,164,65,.5);}
+  .card .num{
+    font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px;display:block;
+  }
+  .card h3{font-size:17px;margin:0 0 10px;}
+  .card p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+
+  /* ---------- formula ---------- */
+  .formula-box{
+    background:linear-gradient(135deg,rgba(217,164,65,.10),rgba(79,168,139,.08));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;margin-top:26px;
+  }
+  .formula{
+    font-size:clamp(15px,2vw,19px);font-weight:600;line-height:2;
+    letter-spacing:.5px;word-break:break-word;
+  }
+  .formula .slot{
+    display:inline-block;padding:2px 10px;margin:3px 4px;border-radius:8px;
+    background:rgba(217,164,65,.16);border:1px dashed rgba(217,164,65,.55);color:#f0cf8a;
+  }
+  .formula .slot.jade{background:rgba(79,168,139,.16);border-color:rgba(79,168,139,.55);color:#8fd9c0;}
+
+  /* ---------- examples ---------- */
+  .example-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .example{
+    background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:18px 20px;
+  }
+  .example .scene{font-size:13px;color:var(--jade);margin-bottom:8px;letter-spacing:.5px;}
+  .example p{margin:0;font-size:15px;line-height:1.85;}
+  .example p b{color:var(--accent);font-weight:600;}
+
+  /* ---------- variants table ---------- */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:600px;}
+  thead th{
+    background:var(--bg-soft);color:var(--accent);font-weight:600;
+    text-align:left;padding:13px 18px;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  tbody td{padding:13px 18px;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td:first-child{color:var(--ink);font-weight:600;}
+
+  /* ---------- guide ---------- */
+  .guide{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;}
+  .guide ol{margin:0;padding-left:0;list-style:none;counter-reset:step;}
+  .guide ol li{
+    counter-increment:step;position:relative;padding:0 0 20px 46px;
+    border-left:1px solid var(--line);margin-left:14px;
+  }
+  .guide ol li:last-child{border-left-color:transparent;padding-bottom:0;}
+  .guide ol li::before{
+    content:counter(step);position:absolute;left:-15px;top:-2px;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--card);border:1px solid var(--accent);color:var(--accent);
+    display:grid;place-items:center;font-size:13.5px;font-weight:700;
+  }
+  .guide ol li h3{font-size:16px;margin:2px 0 6px;}
+  .guide ol li p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+  .note-box{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  }
+  .note-box h3{margin:0 0 12px;font-size:16px;color:var(--jade);}
+  .note-box ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:14.5px;}
+  .note-box li{margin-bottom:10px;}
+  .note-box li:last-child{margin-bottom:0;}
+
+  /* ---------- faq ---------- */
+  .faq{display:grid;gap:12px;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:0 20px;transition:.2s;
+  }
+  details[open]{border-color:rgba(217,164,65,.5);}
+  summary{
+    cursor:pointer;list-style:none;padding:16px 0;font-weight:600;font-size:15.5px;
+    display:flex;justify-content:space-between;gap:16px;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";color:var(--accent);font-size:20px;font-weight:400;flex:0 0 auto;line-height:1;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin:0 0 18px;color:var(--ink-soft);font-size:14.8px;}
+
+  /* ---------- footer ---------- */
+  .site-footer{
+    border-top:1px solid var(--line);background:var(--bg-soft);
+    padding:40px 0 28px;margin-top:20px;
+  }
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:28px;}
+  .footer-grid h3{font-size:15px;margin:0 0 12px;color:var(--ink);}
+  .footer-grid p,.footer-grid li{color:var(--ink-soft);font-size:14px;}
+  .footer-grid ul{list-style:none;margin:0;padding:0;}
+  .footer-grid li{margin-bottom:8px;}
+  .footer-grid a:hover{color:var(--accent);}
+  .copyright{
+    border-top:1px solid var(--line);padding-top:20px;
+    color:var(--ink-soft);font-size:13px;text-align:center;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:32px;padding:44px 0 40px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .example-list{grid-template-columns:1fr;}
+    .guide{grid-template-columns:1fr;gap:26px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .header-inner{height:auto;flex-direction:column;align-items:flex-start;padding:12px 0;gap:10px;}
+    .main-nav{gap:2px;}
+    .main-nav a{padding:6px 10px;font-size:13.5px;}
+    .grid-3{grid-template-columns:1fr;}
+    section{padding:40px 0;}
+    .footer-grid{grid-template-columns:1fr;}
+    .hero-actions .btn{width:100%;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">玛</div>
+      <div>
+        玛雅体
+        <small>网络文体观察</small>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#intro" class="active">什么是玛雅体</a>
+      <a href="#structure">句式结构</a>
+      <a href="#examples">例句示例</a>
+      <a href="#variants">常见变体</a>
+      <a href="#howto">写作方法</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="intro" style="padding:0;">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="tag-row">
+          <span class="tag">网络流行文体</span>
+          <span class="tag">调侃式许愿</span>
+          <span class="tag">2012 玛雅预言</span>
+          <span class="tag">中文互联网</span>
+        </div>
+        <h1>玛雅体：<em>用一句玩笑，说出你最想实现的愿望</em></h1>
+        <p class="lead">
+          玛雅体是中文互联网上一类以“玛雅预言”“2012 世界末日”为背景的调侃式文体。它假装相信末日将至，
+          借此把平时不好意思说出口的愿望、抱怨和小期待，用夸张又轻松的方式讲出来。理解玛雅体，
+          关键是理解它“借一个不存在的终点，说一句真心话”的表达逻辑。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#structure">查看句式结构</a>
+          <a class="btn btn-ghost" href="#examples">直接看例句</a>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <h2>一分钟速览</h2>
+        <ul>
+          <li><span>来源</span>围绕玛雅历法与“2012 末日说”的民间讨论</li>
+          <li><span>核心</span>以“反正末日要来了”为前提，说出真实愿望</li>
+          <li><span>语气</span>自嘲、调侃、半真半假，通常不带攻击性</li>
+          <li><span>常见结构</span>时间前提 + 让步条件 + 愿望或吐槽</li>
+          <li><span>用途</span>社交平台发言、评论互动、文案创意</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 什么是玛雅体 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Definition</span>
+        <h2>玛雅体到底是什么</h2>
+        <p>它不是一种严格的文学体裁，而是网友在特定话题下自然形成的表达习惯，被后来的人总结成了一个名字。</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="num">01 / 背景</span>
+          <h3>借“末日”当引子</h3>
+          <p>
+            玛雅长计历的一个周期在 2012 年前后结束，这一历法节点在传播中被演绎成“世界末日”的说法。
+            尽管这一说法并未被主流学界认可，但它为网络表达提供了一个现成的、人人都懂的“假设前提”。
+          </p>
+        </article>
+        <article class="card">
+          <span class="num">02 / 心理</span>
+          <h3>给真心话找个台阶</h3>
+          <p>
+            直接说“我想辞职去旅行”“我希望有人陪我”会显得太认真。加上“反正 2012 要来了”这层外壳，
+            表达就变得轻松，说的人不尴尬，听的人也容易接话。
+          </p>
+        </article>
+        <article class="card">
+          <span class="num">03 / 形式</span>
+          <h3>短句为主，口语化</h3>
+          <p>
+            玛雅体通常一到三句话，不追求对仗工整，也不要求押韵。它更像朋友圈里随口一句感慨，
+            关键在于“前提荒诞、愿望真实”的反差。
+          </p>
+        </article>
+      </div>
+
+      <div class="formula-box">
+        <h2 style="font-size:17px;margin:0 0 14px;color:var(--accent);">一句话概括它的表达逻辑</h2>
+        <p style="margin:0;color:var(--ink-soft);font-size:15px;">
+          用一个大家都不太当真的“大前提”，换取一次说真话的机会——这就是玛雅体最核心的地方。
+          它讨论的从来不是末日，而是末日之前你还想做什么。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 句式结构 -->
+  <section id="structure" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Structure</span>
+        <h2>玛雅体的典型句式结构</h2>
+        <p>把句子拆开看，会发现它其实由几个可以替换的“插槽”组成。掌握插槽，就能自己造句子。</p>
+      </div>
+
+      <div class="formula-box" style="margin-top:0;">
+        <div class="formula">
+          <span class="slot">时间前提</span> +
+          <span class="slot jade">让步条件</span> +
+          <span class="slot">真实愿望 / 吐槽</span>
+        </div>
+        <p style="margin:18px 0 0;color:var(--ink-soft);font-size:15px;">
+          例如：“<b style="color:var(--accent);">反正 2012 也快到了</b>，
+          <b style="color:var(--jade);">如果真要有那么一天</b>，
+          我想先把手头这份报告删掉。”
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top:26px;">
+        <article class="card">
+          <span class="num">插槽 A</span>
+          <h3>时间前提</h3>
+          <p>用来建立共同语境，常见说法有“2012 快到了”“玛雅人说的那天”“如果末日是真的”。它负责把话题拉进同一个假设里。</p>
+        </article>
+        <article class="card">
+          <span class="num">插槽 B</span>
+          <h3>让步条件</h3>
+          <p>“如果真有那一天”“反正也来不及了”“既然都要结束了”。这一层让后面的愿望显得不那么郑重，起到缓冲作用。</p>
+        </article>
+        <article class="card">
+          <span class="num">插槽 C</span>
+          <h3>真实愿望</h3>
+          <p>句子的落点。可以是小小的任性、没说出口的喜欢、想见的人、想去的城市，也可以是纯粹的吐槽。越具体越有共鸣。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 例句 -->
+  <section id="examples">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Examples</span>
+        <h2>玛雅体例句与使用场景</h2>
+        <p>下面这些句子按不同场景分类，展示同一结构如何表达不同情绪。它们只是写法示范，不代表固定模板。</p>
+      </div>
+
+      <div class="example-list">
+        <article class="example">
+          <div class="scene">场景 · 工作压力</div>
+          <p>反正 2012 也快到了，我决定先把没写完的周报放一放，<b>去楼下买杯奶茶</b>。</p>
+        </article>
+        <article class="example">
+          <div class="scene">场景 · 感情表达</div>
+          <p>如果玛雅人说的是真的，那我大概应该现在就告诉你，<b>其实我挺喜欢你的</b>，反正也来不及后悔了。</p>
+        </article>
+        <article class="example">
+          <div class="scene">场景 · 生活小愿望</div>
+          <p>听说末日要来了，那我的愿望很简单：<b>睡到自然醒，冰箱里永远有冰淇淋</b>。</p>
+        </article>
+        <article class="example">
+          <div class="scene">场景 · 自我调侃</div>
+          <p>2012 都过去这么多年了，我还是没瘦下来，<b>看来玛雅人算错了，我也没算对</b>。</p>
+        </article>
+        <article class="example">
+          <div class="scene">场景 · 旅行向往</div>
+          <p>如果真有一个终点，那我想在那之前<b>去看一次海</b>，哪怕只是坐一下午什么都不做。</p>
+        </article>
+        <article class="example">
+          <div class="scene">场景 · 朋友互动</div>
+          <p>玛雅体嘛，就是——<b>反正都要结束了，这顿你请吧</b>。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 变体 -->
+  <section id="variants" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Variants</span>
+        <h2>玛雅体的常见变体与关联写法</h2>
+        <p>随着时间推移，玛雅体衍生出几种不同语气。它们共享“借一个假设说真话”的内核，但情绪走向并不相同。</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>变体类型</th>
+              <th>语气特点</th>
+              <th>典型开头</th>
+              <th>适用场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>许愿型</td>
+              <td>温柔、略带浪漫</td>
+              <td>如果那一天真的会来……</td>
+              <td>表达心愿、纪念、告别</td>
+            </tr>
+            <tr>
+              <td>吐槽型</td>
+              <td>自嘲、幽默</td>
+              <td>反正都要结束了，还……</td>
+              <td>缓解压力、日常调侃</td>
+            </tr>
+            <tr>
+              <td>表白型</td>
+              <td>半真半假、试探</td>
+              <td>来不及了，所以我想说……</td>
+              <td>社交互动、轻松示好</td>
+            </tr>
+            <tr>
+              <td>怀旧型</td>
+              <td>感慨、回望</td>
+              <td>2012 都过去这么久了……</td>
+              <td>回顾旧话题、讨论网络记忆</td>
+            </tr>
+            <tr>
+              <td>反转型</td>
+              <td>先立后破、制造笑点</td>
+              <td>如果末日没来，那我……</td>
+              <td>评论区接梗、段子创作</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 写作方法 -->
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">How to write</span>
+        <h2>如何写出一句自然的玛雅体</h2>
+        <p>写得好不好，标准只有一个：读起来像真人说话，而不是在套模板。</p>
+      </div>
+
+      <div class="guide">
+        <ol>
+          <li>
+            <h3>先想清楚你想说什么</h3>
+            <p>先确定落点——是一句真心话、一个愿望，还是一句吐槽。前提只是包装，落点才是句子的价值所在。</p>
+          </li>
+          <li>
+            <h3>选一个轻的前提</h3>
+            <p>前提要让人一眼看懂，不必解释。常用的是“2012”“玛雅预言”“末日”这类大家都有印象的说法。</p>
+          </li>
+          <li>
+            <h3>加一层缓冲</h3>
+            <p>用“反正”“如果真有那一天”“也来不及了”把郑重感降下来，让真话显得不那么沉重。</p>
+          </li>
+          <li>
+            <h3>把愿望写具体</h3>
+            <p>“环游世界”太空，“想去楼下那家面馆再吃一碗”更有画面。具体的细节往往比宏大的愿望更打动人。</p>
+          </li>
+          <li>
+            <h3>读一遍，删掉多余的字</h3>
+            <p>玛雅体通常越短越好。删掉解释性的话，留下最有劲的那一句，效果通常更好。</p>
+          </li>
+        </ol>
+
+        <div class="note-box">
+          <h3>写作时的几点提醒</h3>
+          <ul>
+            <li>不要把“末日”当成事实来陈述，它只是一个表达用的假设前提。</li>
+            <li>避免把调侃指向具体的人，尤其是带有贬低意味的玩笑，容易变味。</li>
+            <li>同一个梗反复使用会失去新鲜感，可以换前提、换落点、换语气。</li>
+            <li>如果用于正式场合或商业文案，建议先确认语境是否合适。</li>
+            <li>涉及真实事件、真实人物时，保持克制，不要编造细节。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于玛雅体的常见问题</h2>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>玛雅体和“2012 世界末日”说法是什么关系？</summary>
+          <p>
+            玛雅体借用了“2012 世界末日”这一流传较广的说法作为表达背景。需要说明的是，
+            所谓“玛雅预言世界末日”是传播过程中形成的演绎，并未被主流学界认可。
+            玛雅体本身也大多是以此为玩笑前提，而非真的在讨论末日。
+          </p>
+        </details>
+        <details>
+          <summary>玛雅体算不算一种正式的修辞手法？</summary>
+          <p>
+            它更接近网络语言中约定俗成的表达习惯，而不是修辞学意义上的固定辞格。
+            它常用到假设、反讽、自嘲等手法，但并没有严格的格式要求。
+          </p>
+        </details>
+        <details>
+          <summary>为什么玛雅体大多带着一点伤感？</summary>
+          <p>
+            因为它把“终点”当作前提，人在面对终点时，往往会说出平时不说的话。
+            这种“轻松外壳 + 认真内核”的组合，天然带有轻微的感伤色彩。
+          </p>
+        </details>
+        <details>
+          <summary>现在还能用玛雅体吗？</summary>
+          <p>
+            可以用。它已经从一个热点话题沉淀为一种通用句式，前提也可以替换成别的假设。
+            只要保留“借假设说真话”的结构，就仍然成立。
+          </p>
+        </details>
+        <details>
+          <summary>玛雅体和“如果体”“反正体”有什么区别？</summary>
+          <p>
+            它们结构相近，都属于假设式表达。区别主要在语境来源：玛雅体带有明确的“末日”背景，
+            而“如果体”“反正体”的适用范围更宽，不依赖特定话题。
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>关于本站</h3>
+        <p>
+          本站是一个围绕中文网络流行文体与语言现象的内容页面，整理常见表达形式的来源、结构与使用场景，
+          帮助读者理解它们为什么会被这样使用。
+        </p>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul>
+          <li><a href="#intro">什么是玛雅体</a></li>
+          <li><a href="#structure">句式结构</a></li>
+          <li><a href="#examples">例句示例</a></li>
+          <li><a href="#variants">常见变体</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>延伸阅读</h3>
+        <ul>
+          <li><a href="#howto">写作方法</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#about">表达逻辑</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2024 玛雅体 · 网络文体观察 &nbsp;|&nbsp; 内容仅供语言现象学习与参考
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 导航高亮：滚动时同步当前区块
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.main-nav a'));
+    var targets = links
+      .map(function (a) {
+        var id = a.getAttribute('href');
+        return id && id.charAt(0) === '#' ? document.querySelector(id) : null;
+      })
+      .filter(Boolean);
+
+    if (!targets.length || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    targets.forEach(function (t) { observer.observe(t); });
+  })();
+</script>
+
+</body>
+  </html>
