@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随缘居-同人创作交流与作品分享社区</title>
+<meta name="description" content="随缘居是一个面向同人爱好者的创作交流社区，提供同人小说、绘画、讨论版块与创作指南，帮助创作者和读者找到志同道合的伙伴，随缘而聚，因爱而居。">
+<meta name="keywords" content="随缘居,同人社区,同人创作,同人小说,同人交流,创作分享">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#f6f3ee;
+    --panel:#fffdf9;
+    --ink:#2f2a26;
+    --ink-soft:#6b625a;
+    --line:#e4dcd1;
+    --accent:#8c6a4a;
+    --accent-deep:#6d4f34;
+    --accent-soft:#f0e6da;
+    --tag:#eae1d5;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:var(--accent-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img{max-width:100%;}
+  .wrap{
+    width:100%;
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* 页眉 */
+  .site-header{
+    background:var(--panel);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding:14px 20px;
+    max-width:1140px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-mark{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(140deg,#a5835f,#6d4f34);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+    flex-shrink:0;
+  }
+  .brand-text b{
+    display:block;
+    font-size:19px;
+    letter-spacing:2px;
+    color:var(--ink);
+  }
+  .brand-text span{
+    display:block;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:1px;
+  }
+  .main-nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .main-nav a{
+    display:block;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:14px;
+    color:var(--ink-soft);
+    transition:.2s;
+  }
+  .main-nav a:hover,.main-nav a.active{
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    text-decoration:none;
+  }
+
+  /* 首屏 */
+  .hero{
+    background:
+      radial-gradient(circle at 12% 20%, rgba(165,131,95,.18), transparent 55%),
+      radial-gradient(circle at 88% 10%, rgba(109,79,52,.14), transparent 50%),
+      var(--panel);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.35fr .95fr;
+    gap:40px;
+    padding:56px 20px 48px;
+    max-width:1140px;
+    margin:0 auto;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:34px;
+    line-height:1.35;
+    margin:0 0 16px;
+    letter-spacing:1px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--accent-deep);
+  }
+  .hero p.lead{
+    margin:0 0 24px;
+    color:var(--ink-soft);
+    font-size:16.5px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .btn{
+    display:inline-block;
+    padding:11px 24px;
+    border-radius:26px;
+    font-size:15px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.2s;
+  }
+  .btn-primary{
+    background:var(--accent-deep);
+    color:#fff;
+  }
+  .btn-primary:hover{
+    background:#5a4029;
+    text-decoration:none;
+  }
+  .btn-ghost{
+    background:transparent;
+    border-color:var(--accent);
+    color:var(--accent-deep);
+  }
+  .btn-ghost:hover{
+    background:var(--accent-soft);
+    text-decoration:none;
+  }
+  .hero-side{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .hero-side h2{
+    font-size:16px;
+    margin:0 0 14px;
+    letter-spacing:1px;
+    color:var(--accent-deep);
+  }
+  .hero-side ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .hero-side li{
+    display:flex;
+    gap:10px;
+    font-size:14px;
+    color:var(--ink-soft);
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .hero-side li:last-child{border-bottom:none;}
+  .hero-side li b{
+    color:var(--accent-deep);
+    font-weight:600;
+    flex-shrink:0;
+  }
+
+  /* 通用区块 */
+  section.block{
+    padding:52px 0;
+  }
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:23px;
+    margin:0;
+    letter-spacing:1px;
+  }
+  .section-head h2::after{
+    content:"";
+    display:block;
+    width:44px;
+    height:3px;
+    background:var(--accent);
+    border-radius:2px;
+    margin-top:8px;
+  }
+  .section-head p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:14px;
+    max-width:560px;
+  }
+
+  /* 版块导航 */
+  .board-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+  }
+  .board-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    transition:.25s;
+  }
+  .board-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(109,79,52,.1);
+  }
+  .board-card .icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    margin-bottom:12px;
+  }
+  .board-card h3{
+    margin:0 0 8px;
+    font-size:17px;
+  }
+  .board-card p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  /* 作品列表 */
+  .works-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+  }
+  .work-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .work-item{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 20px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .work-cover{
+    width:56px;
+    height:56px;
+    border-radius:10px;
+    flex-shrink:0;
+    background:linear-gradient(140deg,#cbb193,#8c6a4a);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+  .work-body h3{
+    margin:0 0 6px;
+    font-size:16.5px;
+  }
+  .work-body p{
+    margin:0 0 10px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .tag{
+    background:var(--tag);
+    color:var(--accent-deep);
+    font-size:12.5px;
+    padding:3px 10px;
+    border-radius:12px;
+  }
+
+  /* 侧栏 */
+  .aside-box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    margin-bottom:20px;
+  }
+  .aside-box h3{
+    font-size:16px;
+    margin:0 0 14px;
+    color:var(--accent-deep);
+  }
+  .rank-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    counter-reset:rank;
+  }
+  .rank-list li{
+    counter-increment:rank;
+    display:flex;
+    gap:10px;
+    font-size:14px;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+    color:var(--ink-soft);
+  }
+  .rank-list li:last-child{border-bottom:none;}
+  .rank-list li::before{
+    content:counter(rank);
+    width:20px;
+    height:20px;
+    border-radius:6px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    margin-top:3px;
+  }
+  .notice-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .notice-list li{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    padding:8px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .notice-list li:last-child{border-bottom:none;}
+
+  /* 指南 */
+  .guide-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+  .guide-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:10px;
+    padding:20px 22px;
+  }
+  .guide-card h3{
+    margin:0 0 10px;
+    font-size:16.5px;
+  }
+  .guide-card p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  /* FAQ */
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .faq-item{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 22px;
+  }
+  .faq-item h3{
+    margin:0 0 8px;
+    font-size:16px;
+    color:var(--accent-deep);
+  }
+  .faq-item p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* 页脚 */
+  .site-footer{
+    background:#2f2a26;
+    color:#cfc6bb;
+    margin-top:20px;
+    padding:44px 0 24px;
+    font-size:14px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:32px;
+    padding-bottom:26px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .site-footer h4{
+    color:#fff;
+    font-size:15px;
+    margin:0 0 12px;
+    letter-spacing:1px;
+  }
+  .site-footer p{
+    margin:0 0 8px;
+    line-height:1.8;
+  }
+  .site-footer ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .site-footer ul li{
+    margin-bottom:8px;
+  }
+  .site-footer a{
+    color:#cfc6bb;
+  }
+  .site-footer a:hover{
+    color:#fff;
+  }
+  .footer-bottom{
+    text-align:center;
+    padding-top:18px;
+    font-size:13px;
+    color:#9c948b;
+  }
+
+  /* 响应式 */
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:28px;padding:40px 20px;}
+    .works-layout{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15px;}
+    .header-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+    .main-nav ul{gap:4px;}
+    .main-nav a{padding:6px 10px;font-size:13px;}
+    .hero h1{font-size:26px;}
+    .section-head h2{font-size:20px;}
+    section.block{padding:38px 0;}
+    .footer-grid{grid-template-columns:1fr;}
+    .work-item{flex-direction:row;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">缘</div>
+      <div class="brand-text">
+        <b>随缘居</b>
+        <span>同人创作 · 交流社区</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#boards" class="active">版块总览</a></li>
+        <li><a href="#works">作品分享</a></li>
+        <li><a href="#guide">创作指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#about">关于本站</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>随缘居 · 因热爱而聚的<em>同人创作社区</em></h1>
+        <p class="lead">
+          随缘居是一个以同人创作为核心的交流空间。无论你是写文、画画、做视频，还是单纯喜欢读故事、看评论，这里都欢迎你按自己的节奏参与。随缘而来，随心而居——找到同好，也找到继续创作的动力。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#boards">浏览版块</a>
+          <a class="btn btn-ghost" href="#guide">新人创作指南</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <h2>社区速览</h2>
+        <ul>
+          <li><b>创作方向</b><span>文字、绘画、剪辑、音频等多种形式</span></li>
+          <li><b>交流方式</b><span>主题版块发帖、评论互动、合集整理</span></li>
+          <li><b>参与门槛</b><span>注册即可阅读，创作发布需遵守版规</span></li>
+          <li><b>社区氛围</b><span>尊重原创，友善讨论，不喜勿入</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 版块总览 -->
+  <section class="block" id="boards">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>版块总览</h2>
+        <p>随缘居按创作形式和讨论主题划分版块，你可以先挑一个感兴趣的方向进入，慢慢熟悉社区节奏。</p>
+      </div>
+      <div class="board-grid">
+        <article class="board-card">
+          <div class="icon">文</div>
+          <h3>文字创作区</h3>
+          <p>连载小说、短篇、随笔、剧本等文字作品的发布与讨论，支持分章节更新与读者评论。</p>
+        </article>
+        <article class="board-card">
+          <div class="icon">绘</div>
+          <h3>绘画与设计区</h3>
+          <p>插画、条漫、角色设定、封面设计等视觉作品的展示区，欢迎过程稿与创作心得分享。</p>
+        </article>
+        <article class="board-card">
+          <div class="icon">影</div>
+          <h3>影音剪辑区</h3>
+          <p>视频剪辑、广播剧、配乐翻唱等作品的交流版块，可附创作思路与素材说明。</p>
+        </article>
+        <article class="board-card">
+          <div class="icon">谈</div>
+          <h3>综合讨论区</h3>
+          <p>围绕作品设定、角色理解、创作技巧展开的日常讨论，适合轻松聊天与观点交流。</p>
+        </article>
+        <article class="board-card">
+          <div class="icon">荐</div>
+          <h3>作品推荐区</h3>
+          <p>分享你喜欢的同人作品与创作者，附上推荐理由，帮助更多人发现优质内容。</p>
+        </article>
+        <article class="board-card">
+          <div class="icon">务</div>
+          <h3>站务与反馈</h3>
+          <p>版规说明、问题反馈、功能建议的集中处理区，遇到使用问题可在此留言。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品分享 + 侧栏 -->
+  <section class="block" id="works" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>近期作品分享</h2>
+        <p>以下为社区内常见的作品类型示例，实际内容以站内发布为准。点击版块可查看对应分类。</p>
+      </div>
+      <div class="works-layout">
+        <div>
+          <ul class="work-list">
+            <li class="work-item">
+              <div class="work-cover">连载</div>
+              <div class="work-body">
+                <h3>长篇连载 · 都市背景群像故事</h3>
+                <p>多线叙事结构，围绕几位主角的日常与选择展开，更新节奏稳定，适合喜欢慢慢追读的读者。</p>
+                <div class="tags">
+                  <span class="tag">文字创作</span>
+                  <span class="tag">连载</span>
+                  <span class="tag">群像</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-item">
+              <div class="work-cover">短篇</div>
+              <div class="work-body">
+                <h3>短篇合集 · 日常温情向</h3>
+                <p>每篇独立成章，篇幅短小，适合碎片时间阅读，评论区常有读者分享自己的感受。</p>
+                <div class="tags">
+                  <span class="tag">短篇</span>
+                  <span class="tag">日常</span>
+                  <span class="tag">治愈</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-item">
+              <div class="work-cover">插画</div>
+              <div class="work-body">
+                <h3>角色插画 · 设定与过程稿</h3>
+                <p>从草图到成稿的完整记录，附配色思路与笔刷说明，适合想学习绘画流程的创作者参考。</p>
+                <div class="tags">
+                  <span class="tag">绘画</span>
+                  <span class="tag">过程稿</span>
+                  <span class="tag">角色设定</span>
+                </div>
+              </div>
+            </li>
+            <li class="work-item">
+              <div class="work-cover">剪辑</div>
+              <div class="work-body">
+                <h3>视频剪辑 · 剧情向短片</h3>
+                <p>以现有素材重新剪辑的剧情短片，附选曲与转场说明，欢迎在评论区交流剪辑技巧。</p>
+                <div class="tags">
+                  <span class="tag">影音</span>
+                  <span class="tag">剪辑</span>
+                  <span class="tag">剧情向</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <aside>
+          <div class="aside-box">
+            <h3>热门讨论方向</h3>
+            <ol class="rank-list">
+              <li>如何保持长篇连载的更新节奏</li>
+              <li>角色塑造中容易忽略的细节</li>
+              <li>同人创作与原创设定的边界</li>
+              <li>绘画新手常见的构图问题</li>
+              <li>剪辑选曲与情绪表达的配合</li>
+            </ol>
+          </div>
+          <div class="aside-box">
+            <h3>社区公告</h3>
+            <ul class="notice-list">
+              <li>发布作品前请阅读对应版块的版规说明。</li>
+              <li>转载他人内容需获得授权并注明来源。</li>
+              <li>评论区请保持友善，避免人身攻击。</li>
+              <li>遇到违规内容可使用举报功能反馈。</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作指南 -->
+  <section class="block" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>新人创作指南</h2>
+        <p>第一次在随缘居发布作品？下面几条经验可以帮助你更快融入社区，也让你的作品被更多人看到。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>一、先看版规再发帖</h3>
+          <p>每个版块对内容形式、标签使用、更新频率都有不同要求。花几分钟阅读版规，能避免帖子被移动或删除，也能让读者更快找到你的作品。</p>
+        </article>
+        <article class="guide-card">
+          <h3>二、标题与标签要清晰</h3>
+          <p>标题写清作品类型和核心看点，标签选择准确的关键词。清晰的分类不仅方便读者筛选，也有助于作品在版块内被检索到。</p>
+        </article>
+        <article class="guide-card">
+          <h3>三、排版影响阅读体验</h3>
+          <p>文字作品注意分段和空行，长段落容易让读者疲劳；绘画和视频作品建议附上创作说明，让读者理解你的表达意图。</p>
+        </article>
+        <article class="guide-card">
+          <h3>四、认真回应评论</h3>
+          <p>评论是社区交流的核心。对读者的反馈给予回应，既能建立联系，也能帮助你发现自己作品中的不足。</p>
+        </article>
+        <article class="guide-card">
+          <h3>五、尊重原创与授权</h3>
+          <p>引用他人素材、设定或作品时，务必确认授权范围并注明来源。尊重他人的劳动成果，是社区长期运转的基础。</p>
+        </article>
+        <article class="guide-card">
+          <h3>六、保持自己的节奏</h3>
+          <p>创作是长期的事，不必因为更新速度焦虑。随缘居鼓励稳定而持续的创作，而不是短期内的密集输出。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <p>关于随缘居的使用与参与方式，这里整理了一些读者和创作者经常问到的问题。</p>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>随缘居主要面向哪些人？</h3>
+          <p>随缘居面向对同人创作感兴趣的读者与创作者，包括写作者、画手、剪辑爱好者以及喜欢阅读和讨论的普通用户。无论是否发布作品，都可以参与阅读和评论。</p>
+        </article>
+        <article class="faq-item">
+          <h3>不注册可以浏览内容吗？</h3>
+          <p>大部分公开版块支持游客浏览。若需要发帖、评论、收藏或关注创作者，则通常需要注册账号。具体权限以站内实际设置为准。</p>
+        </article>
+        <article class="faq-item">
+          <h3>发布作品有什么要求？</h3>
+          <p>作品需为本人创作或已获得授权，内容需符合对应版块的主题与版规。发布时建议填写准确的标题、标签和简介，便于读者理解和检索。</p>
+        </article>
+        <article class="faq-item">
+          <h3>可以转载其他平台的作品吗？</h3>
+          <p>转载需获得原作者明确授权，并在显著位置注明原作者与出处。未获授权的转载可能会被删除，请务必先确认授权情况。</p>
+        </article>
+        <article class="faq-item">
+          <h3>遇到不友善的评论怎么办？</h3>
+          <p>可以使用举报功能向版务反馈，并尽量避免在评论区直接争执。版务会根据版规对违规内容进行处理，维护正常的交流秩序。</p>
+        </article>
+        <article class="faq-item">
+          <h3>如何让自己的作品被更多人看到？</h3>
+          <p>保持稳定更新、完善标题与标签、积极参与版块讨论，都是常见且有效的方式。社区更看重长期积累，而非一次性的集中推广。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>关于随缘居</h2>
+      </div>
+      <p style="max-width:820px;color:var(--ink-soft);margin:0;">
+        “随缘居”这个名字取意于随缘而聚、因爱而居。我们希望搭建一个节奏舒缓、氛围友善的同人创作空间，让创作者可以安心发布作品，让读者可以自在地阅读与交流。社区不追求流量排名，更在意内容本身和人与人之间的真诚互动。如果你也认同这样的理念，欢迎在这里留下你的作品与想法。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>随缘居</h4>
+        <p>同人创作交流社区，随缘而聚，因爱而居。</p>
+        <p>倡导尊重原创、友善讨论的社区氛围。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="#boards">版块总览</a></li>
+          <li><a href="#works">作品分享</a></li>
+          <li><a href="#guide">创作指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与提示</h4>
+        <ul>
+          <li>发布前请阅读对应版块版规</li>
+          <li>转载内容需获得授权并注明来源</li>
+          <li>评论区保持友善与理性</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 随缘居 · 本站为同人创作交流主题展示页面，具体功能与内容以实际站点为准。
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 平滑滚动与导航高亮
+  (function () {
+    var links = document.querySelectorAll('.main-nav a[href^="#"]');
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.forEach(function (l) { l.classList.remove('active'); });
+        link.classList.add('active');
+      });
+    });
+  })();
+</script>
+
+</body>
+  </html>
